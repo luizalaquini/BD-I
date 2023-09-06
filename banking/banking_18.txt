@@ -1,0 +1,7 @@
+-- Escreva uma consulta que retorne o nome (branch_name) e a cidade (branch_city) das agências que possuem simultaneamente conta e empréstimo do cliente cujo nome (customer_name) é “Hayes”. O resultado não deve conter ocorrências duplicadas.
+
+t1 = branch x loan x borrower x customer
+
+t2 = σ branch.branch_name = loan.branch_name ∧ loan.loan_number = borrower.loan_number ∧ borrower.customer_name = customer.customer_name ∧ customer.customer_name ILIKE 'Hayes' (t1)
+
+π branch.branch_name, branch.branch_city (t2)

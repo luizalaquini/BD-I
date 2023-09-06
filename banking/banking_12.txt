@@ -1,0 +1,11 @@
+-- Escreva uma consulta que retorna o nome das agências (branch_name) que terminam com a letra ’n’ e que o nome da cidade (branch_city) contenha a letra ’i’.
+
+π branch_name (σ branch_name ILIKE '%n' ∧ branch_city ILIKE '%i%' (branch))
+
+-- Mesmo que:
+
+-- t1 = σ branch_name ILIKE '%n' ∧ branch_city ILIKE '%i%' (branch)
+
+-- π branch_name (t1)
+
+-- OBS: Retorna vazio

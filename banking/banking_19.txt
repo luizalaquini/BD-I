@@ -1,0 +1,7 @@
+-- Escreva uma consulta que retorna o nome das agências (branch_name) nas quais os recursos (assets) são maiores que o recurso de alguma agência cujo nome da cidade (branch_city) é “Brooklyn”. O resultado não deve conter ocorrências duplicadas.
+
+t1 = (ρ A (branch)) ⨯ (ρ B (branch))
+
+t2 = σ A.assets > B.assets ∧ B.branch_city ILIKE 'Brooklyn' (t1)
+
+π A.branch_name (t2)
