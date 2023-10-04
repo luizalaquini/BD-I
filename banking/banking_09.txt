@@ -1,0 +1,3 @@
+-- Escreva uma consulta que retorna o nome dos clientes (customer_name) em que o nome da rua (customer_street) contém a letra ’y’ ou o nome do cliente termina com a letra ’y’.
+
+π customer_name (σ customer_name ILIKE '%y' ∨ customer_street ILIKE '%y%' (customer))

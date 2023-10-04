@@ -1,0 +1,7 @@
+-- Escreva uma consulta que retorna uma única coluna contendo o nome dos clientes (customer_name) que possuem conta em mais de uma agência. O resultado não deve conter ocorrências duplicadas.
+
+t0 = π branch.branch_name, depositor.customer_name (branch ⨝ account ⨝ depositor)
+
+t1 = γ depositor.customer_name; count(branch.branch_name)→NumAgencias (t0)
+
+π depositor.customer_name (σ NumAgencias > 1 (t1))  q

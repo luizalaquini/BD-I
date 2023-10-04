@@ -1,0 +1,11 @@
+-- Escreva uma consulta que retorna o nome (customer_name) e a cidade (customer_city) dos clientes que possuem   simultaneamente  conta   e  empréstimo  na   agência  cujo  nome   (branch_name)   é  “Perryridge”.  O resultado não deve conter ocorrências duplicadas.
+
+-- Possuem empréstimo
+t0 = branch ⨝ loan ⨝ borrower ⨝ customer
+t1 = π borrower.customer_name, customer.customer_city (σ branch.branch_name = 'Perryridge' (t0))
+
+-- Possuem conta
+t2 = branch ⨝ account ⨝ depositor ⨝ customer
+t3 = π depositor.customer_name, customer.customer_city (σ branch.branch_name = 'Perryridge' (t2))
+
+t1 ∩ t3

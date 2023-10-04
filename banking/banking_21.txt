@@ -1,0 +1,7 @@
+-- Escreva uma consulta que retorna o número dos empréstimos (loan_number) nos quais a quantia tomada (amount) é menor ou igual a quantia tomada em algum empréstimo da agência cujo nome (branch_name) é “Downtown”. O resultado não deve conter ocorrências duplicadas.
+
+t0 = (ρ A (loan)) ⨯ (ρ B (loan))
+
+t1 = σ A.amount ≤ B.amount ∧ B.branch_name ILIKE 'Downtown' (t0)
+
+π A.loan_number (t1)
