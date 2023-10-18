@@ -1,7 +1,0 @@
--- Escreva uma consulta que retorna uma única coluna contendo o nome dos clientes (customer_name) que possuem empréstimo em mais de uma agência. O resultado não deve conter ocorrências duplicadas.
-
-t0 = π branch.branch_name, borrower.customer_name (branch ⨝ loan ⨝ borrower)
-
-t1 = γ borrower.customer_name; count(branch.branch_name)→NumAgencias (t0)
-
-π borrower.customer_name (σ NumAgencias > 1 (t1))

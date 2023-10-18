@@ -1,5 +1,0 @@
--- Escreva uma consulta que retorna uma única coluna contendo o nome dos clientes (customer_name) que moram em ruas  com   nomes   (customer_street)   iguais  mas   em   cidades   com   nomes  (customer_city)   diferentes.   O resultado não deve conter ocorrências duplicadas
-
-t0 = (ρ A (customer)) ⨯ (ρ B (customer))
-
-π A.customer_name (σ A.customer_street = B.customer_street ∧ A.customer_city ≠ B.customer_city (t0))

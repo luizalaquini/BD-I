@@ -1,9 +1,0 @@
--- Escreva uma consulta que retorna o nome (customer_name) e a cidade (customer_city) dos clientes que possuem conta na agência cujo nome (branch_name) é “Perryridge”. O resultado não deve conter ocorrências duplicadas.
-
-t1 = branch ⨝ account ⨝ depositor ⨝ customer
-
-t2 = σ branch.branch_name ILIKE 'Perryridge' (t1)
-
-t3 = π depositor.customer_name, customer.customer_city (t2)
-
-t3

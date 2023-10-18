@@ -1,4 +1,0 @@
--- Samantha foi incumbida de calcular os salários médios mensais considerando todos os funcionários da tabela Employee, mas só percebeu que a tecla 0 do teclado estava quebrada depois de concluir o cálculo. Ela quer sua ajuda para encontrar a diferença entre o erro de cálculo (usando salários sem zeros) e o salário médio real. Para isso, escreva uma consulta que calcule a quantidade de erro (ou seja: salário médio correto – salário médio calculado incorretamente). O  nome  da  coluna  da  tabela  retornada  deve  ser QTDE_ERRO  e  o  valor  arredondado para  o  próximo número inteiro (por ex., 30.3 ! 31).
-
-select ceiling(avg(salary)) - ceiling(avg(replace(salary, '0', '')))  as QTDE_ERRO 
-from Employee

@@ -1,5 +1,0 @@
--- Escreva uma consulta que retorna o nome (branch_name) e a cidade (branch_city) das agências que possuem conta do cliente cujo nome (customer_name) é “Hayes”. O resultado não deve conter ocorrências duplicadas.
-
-t0 = branch ⨝ account ⨝ depositor
-
-π branch.branch_name, branch.branch_city (σ depositor.customer_name = 'Hayes' (t0))

@@ -1,9 +1,0 @@
--- Escreva uma consulta que retorna o nome dos clientes (customer_name) em que o nome da rua (customer_street) termina com a letra ’t’ ou o nome da cidade (customer_city) começa com a letra ’S’.
-
-π customer_name (σ customer_street ILIKE '%t' ∨ customer_city ILIKE 'S%' (customer))
-
--- Mesmo que:
-
--- t1 = σ customer_street ILIKE '%t' ∨ customer_city ILIKE 'S%' (customer)
-
--- π customer_name (t1)
