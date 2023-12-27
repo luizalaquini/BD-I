@@ -1,0 +1,5 @@
+-- Escreva uma consulta que retorna o número das contas (account_number) que possuem saldo (balance) entre 700 e 900 (extremos incluídos).
+
+t0 = σ balance ≥ 700 ∧ balance ≤ 900 (account)
+
+π account_number (t0)

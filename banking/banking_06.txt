@@ -1,0 +1,9 @@
+-- Escreva uma consulta que retorna o nome das agências (branch_name) nas quais os recursos (assets) estão fora do intervalo de 1000000 a 7000000 (extremos excluídos).
+
+π branch_name (σ assets < 1000000 ∨ assets > 7000000 (branch))
+
+-- Mesmo que:
+
+-- t1 = σ assets < 1000000 ∨ assets > 7000000 (branch)
+
+-- π branch_name (t1)

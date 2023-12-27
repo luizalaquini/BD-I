@@ -1,0 +1,3 @@
+-- Escreva uma consulta que retorna o nome das agências (branch_name) em que o nome da cidade (branch_city) inicia com a letra ’B’ e termina com a letra ’n’
+
+π branch_name (σ branch_city ILIKE 'B%' ∧ branch_city ILIKE '%n' (branch))

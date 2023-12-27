@@ -1,0 +1,12 @@
+-- Escreva uma consulta que retorna o nome dos clientes (customer_name) que possuem conta em agências em que o cliente chamado “Smith” possui empréstimo. O resultado não deve conter ocorrências duplicadas
+
+-- Agencias que o cliente "Smith" possui emprestimo
+t0 = π borrower.customer_name, branch.branch_name (branch ⨝ loan ⨝ borrower)
+t1 = π branch.branch_name (σ borrower.customer_name = 'Smith' (t0))
+
+-- Lista de contas.
+t2 = π depositor.customer_name, branch.branch_name (branch ⨝ account ⨝ depositor)
+
+-- Resultado 
+t3 = ρ A (t2) x ρ B (t1)
+π A.customer_name (σ A.branch_name = B.branch_name ∧ A.customer_name ≠ 'Smith'(t3))

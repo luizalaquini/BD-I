@@ -1,0 +1,5 @@
+-- Escreva uma consulta que retorna o nome (customer_name) e a cidade (customer_city) dos clientes que possuem empréstimo na agência cujo nome (branch_name) é  “Perryridge”. O resultado não deve conter ocorrências duplicadas.
+
+t0 = branch ⨝ loan ⨝ borrower ⨝ customer
+
+π borrower.customer_name, customer.customer_city (σ branch.branch_name = 'Perryridge' (t0))
