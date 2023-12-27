@@ -1,0 +1,17 @@
+-- Escreva uma consulta para obter o(s) nome(s) completo(s) do(s) piloto(s) (colunas forename e surname da tabela drivers separadas por um ' ') que obtiveram a maior soma de pontos que qualquer um de seus oponentes por pelo menos 4 temporadas (tabela seasons); ou seja, a soma das suas pontuações nas corridas realizadas em um ano foi a maior daquele ano. A coluna da tabela de saída deve se chamar  "Piloto". OBS: A coluna  points  da tabela results armazena a quantidade de pontos ganhos por um piloto em uma dada corrida e a coluna year da tabela races indica o ano de realização das corridas.
+
+t0 = results ⨝ races ⨝ drivers
+
+t1 = γ races.year, results.driverId, drivers.forename, drivers.surname; sum(results.points)→PontosNoAno (t0)
+
+t2 = γ races.year; max(PontosNoAno)→MaxPontosNoAno (t1)
+
+t3 = t1 ⨝ t2
+
+t4 = σ PontosNoAno = MaxPontosNoAno (t3)
+
+t5 = γ drivers.forename, drivers.surname; count(results.driverId)→VezesCampeao (t4)
+
+t6 = σ VezesCampeao >= 4 (t5)
+
+π concat(drivers.forename, ' ', drivers.surname)→Piloto (t6)

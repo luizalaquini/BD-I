@@ -1,0 +1,13 @@
+-- Escreva uma consulta para obter o nome completo do(s) piloto(s) (colunas forename e surname da tabela drivers separadas por ' ') com maior número de corridas (tabela races). As colunas da tabela de saída devem ter os nomes "Piloto" e "Aparicoes", respectivamente.
+
+t0 = drivers ⨝ results
+
+t1 = γ drivers.driverId, drivers.forename, drivers.surname; count(results.raceId)→Aparicoes (t0)
+
+t2 = π concat(drivers.forename, ' ', drivers.surname)→Piloto, Aparicoes (t1)
+
+t3 = t2 x γ; max(Aparicoes)→Maior (t2)
+
+t4 = σ Aparicoes = Maior (t3)
+
+π Piloto, Aparicoes (t4)
